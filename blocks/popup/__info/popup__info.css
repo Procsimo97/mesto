@@ -1,0 +1,12 @@
+.popup__info  {
+  width: 236px;
+  margin: 30px 22px 0;
+  padding: 0 0 10px;
+}
+
+@media screen and (min-width: 608px) {
+  .popup__info {
+    width: 358px;
+    margin: 30px 36px 48px;
+  }
+}

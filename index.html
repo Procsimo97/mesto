@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Место</title>
+</head>
+<body class="page">
+
+  <header class="header">
+   <img class="header__logo" src="./images/logo.svg" alt="логотип место">
+  </header>
+
+  <main class="content">
+
+
+  <form class="popup">
+    <fieldset class="popup__container">
+      <h3 class="popup__header">Редактировать профиль</h3>
+      <input class="input-container popup__name" type="text" placeholder="Ваше имя">
+      <input class="input-container popup__info" type="text" placeholder="Краткое описание">
+      <button class="link exit"></button>
+      <button type="submit" class="link popup__save-btn">Сохранить</button>
+      
+    </fieldset>
+    
+  </form>
+
+
+  <section class="profile">
+    <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар профиля">
+    <div class="profile__full-info">
+      <div class="profile__container-name">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit"></button>
+      </div>
+      <p class="profile__info">Исследователь океана</p>
+    </div>
+    
+    <button class="profile__button"></button>
+  </section>
+
+  <section class="photos">
+    <div class="photos__box">
+      <img src="./images/baikal.jpeg" class="photos__element" alt="Байкал">
+      <div class="photos__info">
+        <h2 class="photos__name">Байкал</h2>
+        <button class="like"></button>
+      </div>
+    </div>
+
+    <div class="photos__box">
+      <img src="./images/golousntnoe.jpeg" class="photos__element" alt="Большое Галоустное">
+      <div class="photos__info">
+        <h2 class="photos__name">Большое Галоустное</h2>
+        <button class="like"></button>
+      </div>
+    </div>
+
+    <div class="photos__box">
+      <img src="./images/jaws.jpeg" class="photos__element" alt="Бар>">
+      <div class="photos__info">
+        <h2 class="photos__name">JAWS</h2>
+        <button class="like"></button>
+      </div>
+    </div>
+
+    <div class="photos__box">
+      <img src="./images/nino.jpeg" class="photos__element" alt="Нижний Новгород">
+      <div class="photos__info">
+        <h2 class="photos__name">Нижний Новгород</h2>
+        <button class="like"></button>
+      </div>
+    </div>
+
+    <div class="photos__box">
+      <img src="./images/taganrog.jpeg" class="photos__element" alt="Таганрог">
+      <div class="photos__info">
+        <h2 class="photos__name">Таганрог</h2>
+        <button class="like"></button>
+      </div>
+    </div>
+    <div class="photos__box">
+      <img src="./images/tanhoi.jpeg" class="photos__element" alt="танхой">
+      <div class="photos__info">
+        <h2 class="photos__name">Танхой</h2>
+        <button class="like"></button>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+  <p class="footer__copyright">2023 Mesto Russia</p>
+  </footer>
+  
+ <script src="./index.js"></script>
+</body>
+</html>
