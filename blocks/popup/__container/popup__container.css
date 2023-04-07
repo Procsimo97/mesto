@@ -1,8 +1,9 @@
 .popup__container {
   position: relative;
   padding: 0;
-  margin: 123px auto 0;
+  margin: auto;
   display: flex;
+  align-self: center;
   flex-direction: column;
   width: 282px;
   border: 0;
@@ -14,4 +15,4 @@
   .popup__container {
     width: 430px;
   }
-}  
+}

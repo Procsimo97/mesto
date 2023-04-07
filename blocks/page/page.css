@@ -1,7 +1,11 @@
 .page {
+  position: relative;
   margin: 0;
   background-color: black;
   color: white;
   min-width: 300px;
   font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
 }

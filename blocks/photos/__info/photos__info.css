@@ -1,6 +1,4 @@
 .photos__info {
   display: flex;
-  position: relative;
-  height: 79px;
   color: black;
 }

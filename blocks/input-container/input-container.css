@@ -1,4 +1,14 @@
 .input-container {
   border: 0;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  width: 236px;
+}
+
+@media screen and (min-width: 608px) {
+  .input-container {
+    width: 358px;
+  }
 }

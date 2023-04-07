@@ -3,7 +3,7 @@
   padding: 0;
   width: 282px;
   height: 50px;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 2px;
   background-color: black;
   background-image: url(../../../images/add__button.svg);
@@ -21,5 +21,6 @@
       width: 150px;
       margin: 0;
       margin-left: auto;
+      background-size: 22px 22px;
     }
 }

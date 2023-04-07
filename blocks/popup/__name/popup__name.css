@@ -1,14 +1,10 @@
 .popup__name  {
-  width: 236px;
-  min-height: 14px;
   margin: 75px 22px 0;
-  line-height: 17px;
   padding: 0 0 10px;
 }
 
 @media screen and (min-width: 608px) {
   .popup__name {
-    width: 358px;
     margin: 0 36px 0;
   }
 }

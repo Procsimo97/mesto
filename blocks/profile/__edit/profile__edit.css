@@ -7,8 +7,8 @@
   border: 1px solid #fff;
   border-radius: 2px;
   background-color: black;
-  background-image: url(../../../images/Edit_Button.svg);
-  background-size: 100% 100%;
+  background-image: url(../../../images/edit_button.svg);
+  background-size: 10px 10px;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
@@ -28,8 +28,8 @@
 @media screen and (min-width: 900px ) {
   .profile__edit {
     box-sizing: content-box;
-    right: -48px;
     width: 24px;
     height: 24px;
+    margin-left: 8px;
   }
 }

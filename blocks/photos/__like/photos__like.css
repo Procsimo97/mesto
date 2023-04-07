@@ -1,0 +1,13 @@
+.photos__like {
+  background-image: url(../../../images/like_disabled.svg);
+  background-color: inherit;
+  width: 22px;
+  height: 19px;
+  margin: 30px 30px 30px auto;
+  padding: 0;
+  border: none;
+}
+
+.photos__like:hover {
+  opacity: 0.6;
+}
