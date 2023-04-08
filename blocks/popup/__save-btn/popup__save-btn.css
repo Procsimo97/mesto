@@ -1,5 +1,4 @@
 .popup__save-btn {
-  padding: 0;
   border: none;
   width: calc(100% - 22px*2);
   height: 100%;
