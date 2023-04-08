@@ -1,18 +1,15 @@
 
 let content = document.querySelector('.content');
 let popup = document.querySelector('.popup');
-
 let profile = content.querySelector('.profile');
-/*let profileInfo = profile.querySelector('.profile__full-info');*/
-let profContainer = profile.querySelector('.profile__container-name');
 let buttonEdit = content.querySelector('.profile__edit');
 let exitBtn = popup.querySelector('.popup__exit');
-let photos = content.querySelector('.photos');
 let profileName = profile.querySelector('.profile__name');
 let profileJob = profile.querySelector('.profile__info');
 let saveBtn = popup.querySelector('.popup__save-btn');
-let nameInput = popup.querySelector('.popup__name');
-let jobInput = popup.querySelector('.popup__info');
+let nameInput = popup.querySelector('.popup__input-container_name');
+let jobInput = popup.querySelector('.popup__input-container_info');
+
 
 //открывает попап и вставляет значения со страницы в поля ввода
 function popupOpen () {
