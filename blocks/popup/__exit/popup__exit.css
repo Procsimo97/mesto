@@ -5,6 +5,7 @@
   width: 20px;
   height: 20px;
   background-image: url(../../../images/Close_icon.svg);
+  background-repeat: no-repeat;
   border: 0;
   background-color:initial;
   cursor: pointer;
