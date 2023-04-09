@@ -7,8 +7,8 @@ let exitBtn = popup.querySelector('.popup__exit');
 let profileName = profile.querySelector('.profile__name');
 let profileJob = profile.querySelector('.profile__info');
 let saveBtn = popup.querySelector('.popup__save-btn');
-let nameInput = popup.querySelector('.popup__input-container_name');
-let jobInput = popup.querySelector('.popup__input-container_info');
+let nameInput = popup.querySelector('.popup__input-container_type_name');
+let jobInput = popup.querySelector('.popup__input-container_type_info');
 
 
 //открывает попап и вставляет значения со страницы в поля ввода

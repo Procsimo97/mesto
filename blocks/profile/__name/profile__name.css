@@ -12,7 +12,7 @@
 
 @media screen and (min-width: 608px) {
   .profile__name {
-    margin: 0;
+    margin: 5px 0 0;
     padding: 0;
   }
 }
@@ -20,7 +20,7 @@
 @media screen and (min-width: 900px ) {
   .profile__name {
     font-size: 42px;
-    line-height: 48px;
+    line-height: 43px;
     max-width: 500px;
   }
 }
