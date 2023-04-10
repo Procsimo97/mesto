@@ -12,7 +12,7 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__header/popup__header.css);
 @import url(../blocks/popup/__input-container/popup__input-container.css);
-@import url(../blocks/popup/__input-container/_type/_name/popup__input-container_type_name.css);
+@import url(../blocks/popup/__input-container/_type/popup__input-container_type_name.css);
 @import url(../blocks/popup/__save-btn/popup__save-btn.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__exit/popup__exit.css);
