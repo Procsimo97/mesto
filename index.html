@@ -28,15 +28,12 @@
     <button type="button" class="profile__button"></button>
   </section>
 
-  <section class="photos">
-    <article class="photos__box">
-      <img src="./images/baikal.jpeg" class="photos__element" alt="Байкал">
-      <div class="photos__info">
-        <h2 class="photos__name">Байкал</h2>
-        <button type="button" class="photos__like"></button>
-      </div>
-    </article>
 
+
+  <section class="photos">
+    
+  </section>
+<!--
     <article class="photos__box">
       <img src="./images/golousntnoe.jpeg" class="photos__element" alt="Большое Галоустное">
       <div class="photos__info">
@@ -75,27 +72,55 @@
         <h2 class="photos__name">Танхой</h2>
         <button type="button" class="photos__like"></button>
       </div>
-    </article>
-  </section>
+    </article>-->
 
-  </main>
+   </main>
+
 
   <footer class="footer">
   <p class="footer__copyright">&copy;2023 Mesto Russia</p>
   </footer>
 
 
-  <div class="popup">
-    <div class="popup__container">
-      <h2 class="popup__header">Редактировать профиль</h2>
-      <button type="button" class="link popup__exit"></button>
-      <form class="popup__form" name="popupForm">
-        <input name="userName" class="popup__input-container popup__input-container_type_name" type="text" placeholder="Ваше имя">
-        <input name="userInfo" class="popup__input-container popup__input-container_type_info" type="text" placeholder="Краткое описание">
-        <button type="submit" class="link popup__save-btn">Сохранить</button>
-      </form>
+<template id="photo-template">
+  <article class="photos__box">
+    <button type="button" class="photos__delete"></button>
+    <img class="photos__element">
+    <div class="photos__info">
+      <h2 class="photos__name"></h2>
+      <button type="button" class="photos__like"></button>
     </div>
-  </div>  
+  </article>
+</template>
+
+<div class="popup popup_type_change">
+  <div class="popup__container">
+    <h2 class="popup__header">Редактировать профиль</h2>
+    <button type="button" class="link popup__exit popup__exit_type_change"></button>
+    <form class="popup__form" name="popupForm">
+      <input name="userName" class="popup__input-container popup__input-container_type_name" type="text" placeholder="Ваше имя">
+      <input name="userInfo" class="popup__input-container popup__input-container_type_info" type="text" placeholder="Краткое описание">
+      <button type="submit" class="link popup__save-btn popup__save-btn_type_change">Сохранить</button>
+    </form>
+  </div>
+</div>  
+
+<div class="popup popup_type_add-cards">
+  <div class="popup__container">
+    <h2 class="popup__header">Новое место</h2>
+    <button type="button" class="link popup__exit popup__exit_type_add"></button>
+    <form class="popup__form" name="popupForm">
+      <input name="placeName" class="popup__input-container popup__input-container_type_name-place" type="text" placeholder="Название">
+      <input name="placeLink" class="popup__input-container popup__input-container_type_link" type="url" placeholder="Ссылка на картинку">
+      <button type="submit" class="link popup__save-btn popup__save-btn_type_add">Создать</button>
+    </form>
+  </div>
+</div>  
+
+<figure class="popup popup_type_image popup_opened">
+  <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Изображение с карточки">
+  <figcaption class="popup__caption">Байкал</figcaption>
+</figure>
 
   <script src="./scripts/index.js"></script>
 </body>

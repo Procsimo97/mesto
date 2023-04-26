@@ -1,0 +1,6 @@
+.popup_type_image {
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
