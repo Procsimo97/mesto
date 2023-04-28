@@ -20,6 +20,7 @@
 @import url(../blocks/popup/__caption/popup__caption.css);
 @import url(../blocks/popup/__image/popup__Image.css);
 @import url(../blocks/popup/_type/popup_type_image.css);
+@import url(../blocks/popup/__image-box/popup__image-box.css);
 /*other*/
 @import url(../blocks/link/link.css);
 /*profile*/
