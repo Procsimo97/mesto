@@ -43,7 +43,7 @@ const nameInput = document.querySelector('.popup__input-container_type_name');
 const jobInput = document.querySelector('.popup__input-container_type_info');
 /*для добавления карточки*/
 const popupAdd = document.querySelector('.popup_type_add-cards');
-const addCardBtn = document.querySelector('.profile__button');
+const buttonAddCard = document.querySelector('.profile__button');
 const placeName = popupAdd.querySelector('.popup__input-container_type_name-place');
 const placeLink = popupAdd.querySelector('.popup__input-container_type_link');
 const buttonAdd = popupAdd.querySelector('.popup__save-btn_type_add');
@@ -149,5 +149,5 @@ buttonClosePopupImg.addEventListener('click', function () {
 
 popup.addEventListener('submit', handleFormSubmit);
 buttonEdit.addEventListener('click', openPopupProfile);
-addCardBtn.addEventListener('click', function () { 
+buttonAddCard.addEventListener('click', function () { 
   openPopup (popupAdd)});
