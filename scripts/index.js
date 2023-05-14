@@ -31,6 +31,7 @@ const photosContainer = document.querySelector('.photos');
 /*для первого попапа*/
 const content = document.querySelector('.content');
 const popup = document.querySelector('.popup');
+const popupForm = popup.querySelector('.popup__container');
 const popupChanges = document.querySelector('.popup_type_change');
 const buttonClosePopupProfile = document.querySelector('.popup__exit_type_change');
 const buttonClosePopupAdd = document.querySelector('.popup__exit_type_add');
@@ -55,12 +56,17 @@ const caption =  popupImg.querySelector('.popup__caption');
 
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+  //закрытие на esc и оверлей
+  document.addEventListener('keydown', closeEscPopup);
+  popup.addEventListener('click', closeOverlayPopup);
 }
 
 /*общая кнопка закрытия*/
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
- 
+  //снятие слушателя, если попап закрыт
+  document.removeEventListener('keydown', closeEscPopup);
+  popup.removeEventListener('click', closeOverlayPopup);
 };
 
 //открывает попап и вставляет значения со страницы в поля ввода
@@ -70,6 +76,22 @@ function openPopupProfile () {
   openPopup (popupChanges);
 }
 
+
+//Закрытие на esc
+const closeEscPopup = (evt) => {
+    if(evt.key === 'Escape') {
+      const popupOpened = document.querySelector('.popup_opened');
+      closePopup(popupOpened);
+    }
+};
+
+//Закрытие на оверлей
+const closeOverlayPopup =  (evt) => {
+  if(evt.currentTarget === evt.target){
+    const popupOpened = document.querySelector('.popup_opened');
+     closePopup(popupOpened);
+  }
+};
 
 
 function handleFormSubmit (evt) {

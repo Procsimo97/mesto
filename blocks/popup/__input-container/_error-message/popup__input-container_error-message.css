@@ -1,0 +1,8 @@
+.popup__input-container_error-message {
+  display: block;
+  color: #ff0000;
+  font-size: 12px;
+  line-height: 15px;
+  width: calc(100% - 36px*2);
+  margin: 5px 36px 13px;
+}

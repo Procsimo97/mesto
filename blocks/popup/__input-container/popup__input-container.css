@@ -9,6 +9,10 @@
   margin: 0 22px;
 }
 
+::placeholder {
+  color: rgba(0, 0, 0, .2);
+}
+
 @media screen and (min-width: 608px) {
   .popup__input-container {
     width: calc(100% - 36px*2);
