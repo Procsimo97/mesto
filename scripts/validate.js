@@ -71,7 +71,7 @@ formInput.addEventListener('input', function () {
 
 //вешает слушатель на валидность на все поля формы.
 const setEventListeners = (formEl) => {
-  const inputList = Array.from(document.querySelectorAll('.popup__input-container'));
+  const inputList = Array.from(formEl.querySelectorAll('.popup__input-container'));
   const btnElement = formEl.querySelector('.popup__save-btn');
   toggleButton(inputList, btnElement);
 

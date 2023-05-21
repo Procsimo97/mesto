@@ -1,0 +1,14 @@
+.popup__input-container_span {
+    display: block;
+    width: calc(100% - 22px*2);
+    min-height: 25px;
+    margin: 5px 22px 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 608px) {
+  .popup__input-container_span {
+    width: calc(100% - 36px*2);
+    margin: 5px 36px 0px;
+  }
+};
