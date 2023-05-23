@@ -56,6 +56,7 @@ const caption =  popupImg.querySelector('.popup__caption');
 
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+
   //закрытие на esc и оверлей
   document.addEventListener('keydown', closeEscPopup);
   popup.addEventListener('click', closeOverlayPopup);
@@ -69,30 +70,29 @@ function closePopup (popup) {
   popup.removeEventListener('click', closeOverlayPopup);
 };
 
+
+//Закрытие на esc
+const closeEscPopup = (evt) => {
+  if(evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+};
+
+//Закрытие на оверлей
+const closeOverlayPopup =  (evt) => {
+if(evt.currentTarget === evt.target){
+  const popupOpened = document.querySelector('.popup_opened');
+   closePopup(popupOpened);
+}
+};
+
 //открывает попап и вставляет значения со страницы в поля ввода
 function openPopupProfile () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup (popupChanges);
 }
-
-
-//Закрытие на esc
-const closeEscPopup = (evt) => {
-    if(evt.key === 'Escape') {
-      const popupOpened = document.querySelector('.popup_opened');
-      closePopup(popupOpened);
-    }
-};
-
-//Закрытие на оверлей
-const closeOverlayPopup =  (evt) => {
-  if(evt.currentTarget === evt.target){
-    const popupOpened = document.querySelector('.popup_opened');
-     closePopup(popupOpened);
-  }
-};
-
 
 function handleFormSubmit (evt) {
     evt.preventDefault();

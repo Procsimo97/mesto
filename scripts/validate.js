@@ -11,25 +11,25 @@ const enableValidation = {
   submitButtonSelector: 'popup__save-btn',
   inactiveButtonClass: 'popup__save-btn_inactive',
   inputErrorClass: 'popup__input-container_invalid',
-  errorClass: 'popup__input-container_error-message'
+  errorClass: 'popup__span_error-message',
 };
 
 
 //показывает эл-т ошибки
 const showError = (formEl, formInput, errorMessage) => {
   const errorElement = formEl.querySelector(`.${formInput.id}-error`);
-  formInput.classList.add('popup__input-container_invalid');
-  errorElement.classList.add('popup__input-container_error-message');
+ 
+  formInput.classList.add(enableValidation.inputErrorClass);
+  errorElement.classList.add(enableValidation.errorClass);
   errorElement.textContent = errorMessage;
 };
 
 //скрывает эл-т ошибки
 const hideInputError = (formEl,formInput) => {
   const errorElement = formEl.querySelector(`.${formInput.id}-error`);
-  console.log(formInput.id);
-  console.log(errorElement);
-  formInput.classList.remove('popup__input-container_invalid');
-  errorElement.classList.remove('popup__input-container_error-message');
+
+  formInput.classList.remove(enableValidation.inputErrorClass);
+  errorElement.classList.remove(enableValidation.errorClass);
   errorElement.textContent = '';
 }
 
@@ -52,10 +52,10 @@ const hasInvalidInput = (inputList) => {
 //блокирует кнопку, если поле не валидно
 const toggleButton = (inputList, btnElement) => {
   if (hasInvalidInput(inputList)) {
-    btnElement.classList.add('popup__save-btn_inactive');
+    btnElement.classList.add(enableValidation.inactiveButtonClass);
     btnElement.setAttribute('disabled', '');
   } else {
-    btnElement.classList.remove('popup__save-btn_inactive');
+    btnElement.classList.remove(enableValidation.inactiveButtonClass);
     btnElement.removeAttribute('disabled', '');
   }
 };
