@@ -70,7 +70,6 @@ function closePopup (popup) {
   popup.removeEventListener('click', closeOverlayPopup);
 };
 
-
 //Закрытие на esc
 const closeEscPopup = (evt) => {
   if(evt.key === 'Escape') {
@@ -94,14 +93,13 @@ function openPopupProfile () {
   openPopup (popupChanges);
 }
 
-function handleFormSubmit (evt) {
-    evt.preventDefault();
+function submitEditProfileForm (evt) {
+  evt.preventDefault();
 
-    profileName.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-    closePopup (popupChanges);
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  closePopup (popupChanges);
 }
-
 //----------------------------------------------------------------------------
 
 //функция создания карточки из заданного массива
@@ -157,8 +155,10 @@ initialCards.forEach((photo) => {
     closePopup (popupAdd);
     placeLink.value = '';
     placeName.value = '';
+    //делает кнопку неактивной, когда поля незаполнены
+    buttonAdd.classList.add('popup__save-btn_inactive');
+    buttonAdd.setAttribute('disabled', '');
   });
-
 //------------------------------------------------------------------------
 
 /*exit*/
@@ -169,7 +169,7 @@ buttonClosePopupAdd.addEventListener('click', function () {
 buttonClosePopupImg.addEventListener('click', function () { 
   closePopup (popupImg)});
 
-popup.addEventListener('submit', handleFormSubmit);
+popup.addEventListener('submit', submitEditProfileForm);
 buttonEdit.addEventListener('click', openPopupProfile);
 buttonAddCard.addEventListener('click', function () { 
   openPopup (popupAdd)});
