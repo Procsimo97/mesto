@@ -7,30 +7,40 @@ const validationConfig = {
   errorClass: 'popup__span_error-message',
 };
 
+/*
+//делает кнопку неактивной, когда поля незаполнены
+const disableSubmitButton  = (config) => {
+  const button = document.querySelector('.popup__save-btn_type_add');
+  button.classList.add(config.inactiveButtonClass);
+  button.setAttribute('disabled', '');
+}
+  disableSubmitButton(validationConfig);
+*/
+
 //показывает эл-т ошибки
-const showError = (formEl, formInput, errorMessage) => {
+const showError = (formEl, formInput, errorMessage, сonfig) => {
   const errorElement = formEl.querySelector(`.${formInput.id}-error`);
  
-  formInput.classList.add(validationConfig.inputErrorClass);
-  errorElement.classList.add(validationConfig.errorClass);
+  formInput.classList.add(сonfig.inputErrorClass);
+  errorElement.classList.add(сonfig.errorClass);
   errorElement.textContent = errorMessage;
 };
 
 //скрывает эл-т ошибки
-const hideInputError = (formEl,formInput) => {
+const hideInputError = (formEl,formInput, сonfig) => {
   const errorElement = formEl.querySelector(`.${formInput.id}-error`);
 
-  formInput.classList.remove(validationConfig.inputErrorClass);
-  errorElement.classList.remove(validationConfig.errorClass);
+  formInput.classList.remove(сonfig.inputErrorClass);
+  errorElement.classList.remove(сonfig.errorClass);
   errorElement.textContent = '';
 }
 
 //функция проверки валидности
-const isValid = (formEl, inputElement) => {
+const isValid = (formEl, inputElement, сonfig) => {
   if(!inputElement.validity.valid) {
-    showError(formEl, inputElement, inputElement.validationMessage);
+    showError(formEl, inputElement, inputElement.validationMessage, сonfig);
   } else {
-    hideInputError(formEl, inputElement);
+    hideInputError(formEl, inputElement, сonfig);
   }
 };
 
@@ -41,39 +51,39 @@ const hasInvalidInput = (inputList) => {
 }
 
 //блокирует кнопку, если поле не валидно
-const toggleButton = (inputList, btnElement) => {
-  if (hasInvalidInput(inputList)) {
-    btnElement.classList.add(validationConfig.inactiveButtonClass);
+const toggleButton = (inputList, btnElement, сonfig) => {
+  if (hasInvalidInput(inputList, сonfig)) {
+    btnElement.classList.add(сonfig.inactiveButtonClass);
     btnElement.setAttribute('disabled', '');
   } else {
-    btnElement.classList.remove(validationConfig.inactiveButtonClass);
-    btnElement.removeAttribute('disabled', '');
+    btnElement.classList.remove(сonfig.inactiveButtonClass);
+    btnElement.toggleAttribute('disabled', '');
   }
 };
 
 //вешает слушатель на валидность на все поля формы.
-const setEventListeners = (formEl) => {
-  const inputList = Array.from(formEl.querySelectorAll(validationConfig.inputSelector));
-  const btnElement = formEl.querySelector(validationConfig.submitButtonSelector);
-  toggleButton(inputList, btnElement);
+const setEventListeners = (formEl, сonfig) => {
+  const inputList = Array.from(formEl.querySelectorAll(сonfig.inputSelector));
+  const btnElement = formEl.querySelector(сonfig.submitButtonSelector);
+  toggleButton(inputList, btnElement, сonfig);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function() {
-      isValid(formEl, inputElement);
-      toggleButton(inputList, btnElement);
+      isValid(formEl, inputElement, сonfig);
+      toggleButton(inputList, btnElement, сonfig);
     })
   });
 };
 
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));
+const enableValidation = (сonfig) => {
+  const formList = Array.from(document.querySelectorAll(сonfig.formSelector));
   formList.forEach((formEl) => {
     formEl.addEventListener('submit', function(evt) {
       evt.preventDefault();
     })
-    setEventListeners(formEl);
+    setEventListeners(formEl, сonfig);
 
   })
 };
 
-enableValidation();
+enableValidation(validationConfig);

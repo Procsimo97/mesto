@@ -145,7 +145,7 @@ initialCards.forEach((photo) => {
 });
 
 //создание карточки из введенных данных
-  buttonAdd.addEventListener('click', addCard = (evt) => {
+buttonAdd.addEventListener('click', addCard = (evt) => {
     evt.preventDefault();
     const newCard = {};
     newCard.link = placeLink.value ;
@@ -155,10 +155,7 @@ initialCards.forEach((photo) => {
     closePopup (popupAdd);
     placeLink.value = '';
     placeName.value = '';
-    //делает кнопку неактивной, когда поля незаполнены
-    buttonAdd.classList.add('popup__save-btn_inactive');
-    buttonAdd.setAttribute('disabled', '');
-  });
+});
 //------------------------------------------------------------------------
 
 /*exit*/
