@@ -134,7 +134,8 @@ const createCard = (photoData) => {
     caption.textContent = photoData.name;
     openPopup (popupImg);
   });
-
+  //блокирует кнопку при втором открытии формы
+  disableSubmitButton(popupAdd, validationConfig);
   return photoElement;
 };
 
@@ -145,7 +146,7 @@ initialCards.forEach((photo) => {
 });
 
 //создание карточки из введенных данных
-buttonAdd.addEventListener('click', addCard = (evt) => {
+  buttonAdd.addEventListener('click', addCard = (evt) => {
     evt.preventDefault();
     const newCard = {};
     newCard.link = placeLink.value ;
@@ -155,7 +156,7 @@ buttonAdd.addEventListener('click', addCard = (evt) => {
     closePopup (popupAdd);
     placeLink.value = '';
     placeName.value = '';
-});
+  });
 //------------------------------------------------------------------------
 
 /*exit*/

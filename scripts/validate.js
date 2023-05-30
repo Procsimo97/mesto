@@ -7,15 +7,12 @@ const validationConfig = {
   errorClass: 'popup__span_error-message',
 };
 
-/*
-//делает кнопку неактивной, когда поля незаполнены
-const disableSubmitButton  = (config) => {
-  const button = document.querySelector('.popup__save-btn_type_add');
+//делает кнопку неактивной
+const disableSubmitButton  = (formEl, config) => {
+  const button = formEl.querySelector(config.submitButtonSelector);
   button.classList.add(config.inactiveButtonClass);
   button.setAttribute('disabled', '');
 }
-  disableSubmitButton(validationConfig);
-*/
 
 //показывает эл-т ошибки
 const showError = (formEl, formInput, errorMessage, сonfig) => {
@@ -57,7 +54,7 @@ const toggleButton = (inputList, btnElement, сonfig) => {
     btnElement.setAttribute('disabled', '');
   } else {
     btnElement.classList.remove(сonfig.inactiveButtonClass);
-    btnElement.toggleAttribute('disabled', '');
+    btnElement.removeAttribute('disabled', '');
   }
 };
 
