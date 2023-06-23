@@ -1,34 +1,6 @@
 import {FormValidator} from './FormValidator.js';
 import Card from './Card.js';
 
-const photosContainer = document.querySelector('.photos');
-
-/*для первого попапа*/
-const content = document.querySelector('.content');
-const popup = document.querySelector('.popup');
-const popupChanges = document.querySelector('.popup_type_change');
-const buttonClosePopupProfile = document.querySelector('.popup__exit_type_change');
-const buttonClosePopupAdd = document.querySelector('.popup__exit_type_add');
-const profile = content.querySelector('.profile');
-const buttonEdit = document.querySelector('.profile__edit');
-const profileName = profile.querySelector('.profile__name');
-const profileJob = profile.querySelector('.profile__info');
-const buttonSave = document.querySelector('.popup__save-btn');
-const nameInput = document.querySelector('.popup__input-container_type_name');
-const jobInput = document.querySelector('.popup__input-container_type_info');
-/*для добавления карточки*/
-const popupAdd = document.querySelector('.popup_type_add-cards');
-const buttonAddCard = document.querySelector('.profile__button');
-const placeName = popupAdd.querySelector('.popup__input-container_type_name-place');
-const placeLink = popupAdd.querySelector('.popup__input-container_type_link');
-const buttonSaveCard = popupAdd.querySelector('.popup__save-btn_type_add');
-/*popup с картинкой*/
-const popupImg = document.querySelector('.popup_type_image');
-const buttonClosePopupImg = document.querySelector('.popup__exit_type_image');
-//forms
-const formAddCard = document.querySelector('.popup__form_type_add-card');
-const formEditProfile = document.querySelector('.popup__form_type_profile');
-
 function openPopup (popup) {
   popup.classList.add('popup_opened');
 
@@ -65,7 +37,7 @@ if(evt.currentTarget === evt.target){
 function openPopupProfile () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  openPopup (popupChanges);
+  openPopup (popupEditProfile);
 }
 
 function submitEditProfileForm (evt) {
@@ -73,13 +45,16 @@ function submitEditProfileForm (evt) {
 
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  closePopup (popupChanges);
+  closePopup (popupEditProfile);
 }
 
-const openImg = () => {
+const openImg = (link, name) => {
+  image.src = link;
+  image.alt = name;
+  caption.textContent = name;
   openPopup (popupImg);
 }
-//----------------------------------------------------------------------------
+
 //для перебора всех карточек в массиве
 function createCard(data) {
   const cardContent = new Card(data,'photo-template', openImg);
@@ -108,22 +83,20 @@ const addCard = (evt) => {
   const element = createCard(newCard);
   photosContainer.prepend(element);
   closePopup (popupAdd);
-  placeLink.value = '';
-  placeName.value = '';
+  formAddCard.reset();
 }
 
 //создание карточки из введенных данных
-  buttonSaveCard.addEventListener('click', addCard);
-
+formAddCard.addEventListener('submit', addCard);
 /*exit*/
 buttonClosePopupProfile.addEventListener('click', function () {
-  closePopup (popupChanges)});
+  closePopup (popupEditProfile)});
 buttonClosePopupAdd.addEventListener('click', function () { 
   closePopup (popupAdd)});
 buttonClosePopupImg.addEventListener('click', function () { 
   closePopup (popupImg)});
 
-popup.addEventListener('submit', submitEditProfileForm);
+popupEditProfile.addEventListener('submit', submitEditProfileForm);
 buttonEdit.addEventListener('click', openPopupProfile);
 buttonAddCard.addEventListener('click', function () { 
   openPopup (popupAdd);

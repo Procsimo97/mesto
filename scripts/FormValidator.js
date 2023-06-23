@@ -32,18 +32,15 @@ export class FormValidator {
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
     errorElement.textContent = '';
-   
- }
+  }
 
   //функция проверки валидности
-  _isValid() {
-    this._inputList.forEach((inputElement) => {
+  _isValid(inputElement) {
     if(!inputElement.validity.valid) {
       this._showError(inputElement);
     } else {
       this._hideInputError(inputElement);
     }
-    })
   }
 
   _hasInvalidInput() {
@@ -66,11 +63,12 @@ export class FormValidator {
     this._toggleButton();
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._isValid();
+        this._isValid(inputElement);
         this._toggleButton();
       })
     });
   }
+
   enableValidation() {
       this._setEventListeners();
   }
