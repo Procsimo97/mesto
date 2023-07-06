@@ -32,7 +32,8 @@ export class FormValidator {
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
     errorElement.textContent = '';
-  }
+   
+ }
 
   //функция проверки валидности
   _isValid(inputElement) {
