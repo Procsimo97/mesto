@@ -22,7 +22,7 @@ const addCard = () => {
   newCard.link = placeLink.value ;
   newCard.name = placeName.value ;
   const element = createCard(newCard);
-  photosContainer.prepend(element);
+  cardList.addItem(element);
   popupCardToggle.close();
 }
 
@@ -35,7 +35,6 @@ function createCard(data) {
 //функция открытия картинки
 const openImg = (link, name) => {
   popupImgToggle.open(link, name);
-  popupImgToggle.setEventListeners();
 }
 
 //класс отрисовки элементов
@@ -44,9 +43,9 @@ const cardList = new Section({
   renderer: (photo) => {
     const card = new Card (photo, 'photo-template', openImg);
     const cardElement = card.generateCard();
-    photosContainer.prepend(cardElement);
+    cardList.addItem(cardElement);
   }
-}, '.photo-template')
+}, '.photos')
 cardList.renderer();
 
 const userInfoClass = new UserInfo({
@@ -66,6 +65,7 @@ popupCardToggle.setEventListeners();
 
 //форма с картикной
 const popupImgToggle = new PopupWithImg('.popup_type_image', '.popup__exit_type_image');
+popupImgToggle.setEventListeners();
 
 //запуск валидации на формах
 const formEditValidator = new FormValidator(formEditProfile, validationConfig);
@@ -83,5 +83,5 @@ buttonEdit.addEventListener('click', () => {
 
 buttonAddCard.addEventListener('click', function () { 
   popupCardToggle.open();
-  formAdd.disableSubmitButton();
+  formAdd.resetValidation();
 });

@@ -10,11 +10,11 @@ export class FormValidator {
   }
 
   //делает кнопку неактивной
-  disableSubmitButton() {
+  resetValidation() {
     this._inputList.forEach((inputElement) => {
           this._hideInputError(inputElement);
         })
-        this._setEventListeners();
+        this._toggleButton();
   }
   //показывает эл-т ошибки
   _showError(inputElement) {

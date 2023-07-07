@@ -12,6 +12,6 @@ export default class Section {
     }
     //добавление э-та в тело
     addItem(element) {
-        this._selector.append(element);
+        this._selector.prepend(element);
     }
 }
