@@ -37,7 +37,7 @@
 .photos__name{font-size:24px;font-weight:900;line-height:29px;margin:0;max-width:209px;overflow:hidden;padding:25px 0 0 21px;text-overflow:ellipsis;white-space:nowrap}
 .photos__like{background-color:inherit;background-image:url(images/like_disabled.87ed371465c7a6a1cd01.svg);border:none;cursor:pointer;height:19px;margin:30px 20px 0 auto;padding:0;width:22px}.photos__like:hover{opacity:.6}
 .photos__like_active{background-image:url(images/like_active.fe17a515669479b1e649.svg)}
-.photos__delete{background-color:transparent;background-image:url(images/Trash.cbc09a894bdd4c956365.svg);background-repeat:no-repeat;background-size:18px 19px;border:none;cursor:pointer;height:19px;margin:0;position:absolute;right:20px;top:20px;width:18px}.photos__delete:hover{opacity:.6}
+.photos__delete{background-color:transparent;background-image:url(images/Trash.cbc09a894bdd4c956365.svg);background-repeat:no-repeat;background-size:18px 19px;border:none;cursor:pointer;display:none;height:19px;margin:0;position:absolute;right:20px;top:20px;width:18px}.photos__delete:hover{opacity:.6}
 .photos__like-score{font-size:13px;height:13px;line-height:16px;margin:3px 21px 22px auto;min-width:10px;text-align:center}
 .photos__likes{margin:0 0 0 auto}
 .footer{margin:48px 19px 36px}@media screen and (min-width:900px){.footer{margin:67px auto 60px;width:880px}}
