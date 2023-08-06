@@ -47,6 +47,7 @@ export const profileName = profile.querySelector('.profile__name');
 export const profileJob = profile.querySelector('.profile__info');
 export const nameInput = document.querySelector('.popup__input-container_type_name');
 export const jobInput = document.querySelector('.popup__input-container_type_info');
+export const buttonSaveUserData = popupEditProfile.querySelector('.popup__save-btn_type_change');
 
 /*для добавления карточки*/
 export const popupAdd = document.querySelector('.popup_type_add-cards');
@@ -61,6 +62,16 @@ export const buttonClosePopupImg = document.querySelector('.popup__exit_type_ima
 export const image = popupImg.querySelector('.popup__image');
 export const caption =  popupImg.querySelector('.popup__caption');
 
+/*попап удаления карточки*/
+export const popupDeleteCard = document.querySelector('.popup_type_сonfirmation');
+export const avatarBtn = document.querySelector('.profile__change-btn');
+export const deleteBtn = photosContainer.querySelector('.photos__delete');
+export const confirmButton = popupDeleteCard.querySelector('.popup__save-btn_type_сonfirmation');
+//попап для смены аватара
+export const popupAvatarChange = document.querySelector('.popup_type_avatar');
+export const inputAvatar = popupAvatarChange.querySelector('.popup__input-container_type_avatar');
+export const saveAvatarBtn = popupAvatarChange.querySelector('.popup__save-btn_type_avatar');
 //forms
 export const formAddCard = document.querySelector('.popup__form_type_add-card');
 export const formEditProfile = document.querySelector('.popup__form_type_profile');
+export const formProfileAvatar = document.querySelector('.popup__form_type_avatar');

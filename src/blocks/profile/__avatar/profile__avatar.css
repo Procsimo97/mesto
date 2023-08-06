@@ -5,3 +5,8 @@
   object-position: center;
   object-fit: cover;
 }
+
+.profile__avatar:hover{
+  opacity: .2;
+  color: #000;
+}
