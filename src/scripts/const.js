@@ -63,10 +63,10 @@ export const image = popupImg.querySelector('.popup__image');
 export const caption =  popupImg.querySelector('.popup__caption');
 
 /*попап удаления карточки*/
-export const popupDeleteCard = document.querySelector('.popup_type_сonfirmation');
+export const popupDeleteCard = document.querySelector('.popup_type_delete-card');
 export const avatarBtn = document.querySelector('.profile__change-btn');
 export const deleteBtn = photosContainer.querySelector('.photos__delete');
-export const confirmButton = popupDeleteCard.querySelector('.popup__save-btn_type_сonfirmation');
+export const confirmButton = popupDeleteCard.querySelector('.popup__save-btn_type_delete-card');
 //попап для смены аватара
 export const popupAvatarChange = document.querySelector('.popup_type_avatar');
 export const inputAvatar = popupAvatarChange.querySelector('.popup__input-container_type_avatar');

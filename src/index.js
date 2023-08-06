@@ -117,8 +117,8 @@ popupProfileToggle.setEventListeners();
 const popupCardToggle = new PopupWithForm('.popup_type_add-cards', addCard, '.popup__exit_type_add');
 popupCardToggle.setEventListeners();
 
-const popupWithDelete = new PopupDeleteCard('.popup_type_сonfirmation', 
-'.popup__exit_type_confirmation', 
+const popupWithDelete = new PopupDeleteCard('.popup_type_delete-card', 
+'.popup__exit_type_delete-card', 
 confirmButton, (card) => {
   confirmButton.textContent = 'Удаление...';
   api.deleteCard(card._idCard)

@@ -24,7 +24,7 @@
 @import url(../blocks/popup/__span/popup__span.css);
 @import url(../blocks/popup/__span/_error-message/popup__span_error-message.css);
 @import url(../blocks/popup/__form/popup__form.css);
-@import url(../blocks/popup/__form/_type/popup__form_type_confirmation.css);
+@import url(../blocks/popup/__form/_type/popup__form_type_delete-card.css);
 /*other*/
 @import url(../blocks/link/link.css);
 /*profile*/
