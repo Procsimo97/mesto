@@ -2,7 +2,7 @@ export default class Section {
     constructor({item, renderer}, selector) {
         this._item = item;
         this._renderer = renderer; 
-        this._selector = document.querySelector(selector);
+        this._photosContainer = document.querySelector(selector);
     }
     //отрисовка эл-та
     renderer() {
@@ -12,6 +12,10 @@ export default class Section {
     }
     //добавление э-та в тело
     addItem(element) {
-        this._selector.prepend(element);
+        this._photosContainer.prepend(element);
+    }
+    //для отрисовки элементов массива в нужном порядке
+    addArrOfItem(element) {
+        this._photosContainer.append(element);
     }
 }

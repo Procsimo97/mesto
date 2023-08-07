@@ -15,7 +15,7 @@ import {validationConfig,
    confirmButton,
    avatarBtn, 
    saveAvatarBtn,
-   formProfileAvatar} from './scripts/const.js';
+   formProfileAvatar} from './utils/const.js';
 
 import {FormValidator} from './scripts/FormValidator.js';
 import Card from './scripts/Card.js';
@@ -53,11 +53,11 @@ const userInfoClass = new UserInfo({
   avatar: '.profile__avatar'
 });
 
-const addCard = () => {
+const addCard = (inputs) => {
   buttonSaveCard.textContent = 'Сохранение...';
   api.addNewCard({
-    name: placeName.value,
-    link: placeLink.value
+    name: inputs.placeName,
+    link: inputs.placeLink
   })
   .then((card) => {
     cardList.addItem(createCard(card));
@@ -96,10 +96,9 @@ const openImg = (link, name) => {
 //функция загрузки данных из введенных параметров 
 const loadingUserData = (data) => {
   buttonSaveUserData.textContent = 'Сохранение...'
-  userInfoClass.setUserInfo(data.name, data.about);//вставляет данные с инпутов в разметку
   api.setUserInfoApi({
-    name: nameInput.value,
-    about: jobInput.value
+    name: data.name,
+    about: data.about
   })
   .then((data) => {
     userInfoClass.setUserInfo(data.name, data.about);
@@ -119,11 +118,12 @@ popupCardToggle.setEventListeners();
 
 const popupWithDelete = new PopupDeleteCard('.popup_type_delete-card', 
 '.popup__exit_type_delete-card', 
-confirmButton, (card) => {
+confirmButton, (card, cardId) => {
   confirmButton.textContent = 'Удаление...';
-  api.deleteCard(card._idCard)
+  api.deleteCard(cardId)
   .then(() => {
     card.cardDelete();
+    popupWithDelete.close();
   })
   .catch((err) => console.log(`Ошибка при удалении карточки ${err}`))
   .finally(() => {
@@ -139,13 +139,13 @@ const popupEditAvatar = new PopupWithForm('.popup_type_avatar', () => {
     api.sendUserAvatar(link)
       .then(() => {
         userInfoClass.setUserAvatar(link);
+        popupEditAvatar.close();
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
         saveAvatarBtn.textContent = 'Сохранить';
-        popupEditAvatar.close();
       })
   
 }, '.popup__exit_type_avatar')
@@ -196,7 +196,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
       item: cardData,
       renderer: (card) => {
         const cardElement = createCard(card);
-        cardList.addItem(cardElement);
+        cardList.addArrOfItem(cardElement);
       return cardElement;
       }
  
