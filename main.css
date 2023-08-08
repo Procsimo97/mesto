@@ -20,7 +20,7 @@
 .popup__span{box-sizing:border-box;display:block;margin:4px 22px 0;min-height:26px;width:calc(100% - 44px)}@media screen and (min-width:608px){.popup__span{margin:4px 36px 0;width:calc(100% - 72px)}}
 .popup__span_error-message{color:red;font-size:12px;line-height:13px}
 .popup__form{margin-top:75px}@media screen and (min-width:608px){.popup__form{margin-top:51px}}
-.popup__form_type_сonfirmation{margin-top:20px}
+.popup__form_type_delete-card{margin-top:20px}
 .link:hover{opacity:.8}
 .profile{align-items:center;display:flex;flex-direction:column;margin:42px 19px 36px}@media screen and (min-width:608px){.profile{flex-direction:row}}@media screen and (min-width:900px){.profile{margin:40px auto 0;width:880px}}
 .profile__container-name{display:flex;gap:10px}
@@ -31,7 +31,7 @@
 .profile__edit{align-self:center;background-color:#000;background-image:url(images/Edit_Button.8667ac4a523e8fc42e59.svg);background-position:50%;background-repeat:no-repeat;background-size:7.5px 7.5px;border:1px solid #fff;cursor:pointer;display:flex;height:18px;margin:22px 0 0;padding:0;width:18px}.profile__edit:hover{opacity:.6}@media screen and (min-width:608px){.profile__edit{background-size:10px 10px;margin:10px 0 0}}@media screen and (min-width:900px){.profile__edit{box-sizing:border-box;height:24px;margin-left:8px;width:24px}}
 .profile__button{background-color:#000;background-image:url(images/add__button.54b1426515811a15ebaf.svg);background-position:50%;background-repeat:no-repeat;border:2px solid #fff;border-radius:2px;cursor:pointer;height:50px;margin:26px 0 0;padding:0;width:282px}.profile__button:hover{opacity:.6}@media screen and (min-width:608px){.profile__button{background-size:22px 22px;margin:0 0 0 auto;width:150px}}
 .profile__change-btn{background:url(images/avatarChange.a086f758840ae814ecde.svg) no-repeat 50%;background-color:rgba(0,0,0,.8);background-size:26px 26px;display:none;height:120px;left:0;position:absolute;right:0;top:0;transition:.4s;width:120px;z-index:1}
-.profile__avatar_overlay{position:sticky}.profile__avatar_overlay:hover .profile__change-btn{display:block}
+.profile__overlay{position:sticky}.profile__overlay:hover .profile__change-btn{display:block}
 .photos{box-sizing:content-box;display:grid;gap:20px 17px;grid-template-columns:repeat(auto-fit,282px);justify-items:center;margin:0 auto;width:282px}@media screen and (min-width:608px){.photos{margin:51px auto 67px;min-width:581px}}@media screen and (min-width:900px){.photos{min-width:880px}}
 .photos__box{background-color:#fff;border-radius:10px;height:361px;overflow:hidden;position:relative;width:282px}
 .photos__info{color:#000;display:flex}
