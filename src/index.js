@@ -8,8 +8,6 @@ import {validationConfig,
    buttonAddCard, 
    buttonSaveCard, 
    buttonSaveUserData, 
-   placeName, 
-   placeLink, 
    formAddCard, 
    formEditProfile, 
    confirmButton,
@@ -104,6 +102,7 @@ const loadingUserData = (data) => {
     userInfoClass.setUserInfo(data.name, data.about);
     popupProfileToggle.close();
   })
+  .catch((err) => console.log(`Ошибка при сохранении карточки ${err}`))
   .finally(() => {
     buttonSaveUserData.textContent = 'Сохранить'
   })
@@ -193,7 +192,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     userInfoClass.setUserAvatar(userData.avatar);
   //отрисовка карточек
     cardList = new Section({
-      item: cardData,
+      items: cardData,
       renderer: (card) => {
         const cardElement = createCard(card);
         cardList.addArrOfItem(cardElement);

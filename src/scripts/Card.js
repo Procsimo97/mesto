@@ -49,6 +49,7 @@ export default class Card {
      //кнопка удаления
      cardDelete() {
       this._element.remove();
+      this._element = null;
      }
     //проверка на наличие моего лайка
      _checkLike() {

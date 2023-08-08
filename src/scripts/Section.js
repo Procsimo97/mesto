@@ -1,12 +1,12 @@
 export default class Section {
-    constructor({item, renderer}, selector) {
-        this._item = item;
+    constructor({items, renderer}, selector) {
+        this._items = items;
         this._renderer = renderer; 
         this._photosContainer = document.querySelector(selector);
     }
     //отрисовка эл-та
     renderer() {
-        this._item.forEach(item => {
+        this._items.forEach(item => {
             this._renderer(item);
         });
     }
